@@ -14,5 +14,9 @@ user_var = $stdin.gets.chomp
 
 
 newStore = Store.create(name: user_var)
-puts newStore.errors[:name]
+# binding.pry
+
+newStore.errors.full_messages.each do |error|
+  puts error
+end
 
